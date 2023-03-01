@@ -60,11 +60,11 @@ public class Matematicas {
         return Stream.iterate(new int[]{0, 1}, x -> new int[]{x[1], x[0] + x[1]}).limit(13).map(x -> x[0]).reduce(0, (x, y) -> x + y);
     }
 
-    public static boolean relacionAurea(int x) {
-        double a = fibonacci13() / fibonacci12();
-        if (a == x) {
+    public static boolean relacionAurea(double x) {
+        double cociente = (double) fibonacci13()/fibonacci12();
+        if(Math.abs(x-cociente)<0.1){
             return true;
-        } else {
+        }else{
             return false;
         }
 
